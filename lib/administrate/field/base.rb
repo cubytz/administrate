@@ -42,6 +42,10 @@ module Administrate
 
       attr_reader :attribute, :data, :page, :resource
 
+      def role
+        @options[:role]
+      end
+
       protected
 
       attr_reader :options
