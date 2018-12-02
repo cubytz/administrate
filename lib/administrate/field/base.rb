@@ -46,6 +46,10 @@ module Administrate
         @options[:role]
       end
 
+      def required?
+        page.resource._validators[self.name.to_sym].map(&:class).include?(ActiveRecord::Validations::PresenceValidator)
+      end
+
       protected
 
       attr_reader :options
